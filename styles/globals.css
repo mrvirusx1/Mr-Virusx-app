@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next { height: 100%; }
+body { background: #000; }
+
+/* custom styles used by the page */
+.flicker{
+  animation: flicker 3s ease-in-out infinite;
+}
+@keyframes flicker{
+  0%,19%,21%,23%,25%,54%,100%{opacity:1}
+  20%,22%,24%,55%{opacity:0.2}
+}
+.marquee{
+  display:inline-block;
+  animation: marquee 12s linear infinite;
+}
+@keyframes marquee{
+  0%{ transform: translateX(0%);} 
+  100%{ transform: translateX(-140%);} 
+}
+.blink{
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink{
+  0%{opacity:1}50%{opacity:0}100%{opacity:1}
+}
